@@ -1,0 +1,31 @@
+
+<body>
+<div class="container">
+	<div class="jumbotron">
+	<div class="row">
+
+			<tbody class="points_table_scrollbar">
+				<tr class="odd" *ngFor="let q of question; let i = index"> <!---->
+					
+					<td class="col-md-3 text-left" id="para"><strong>{{q}}</strong></td>
+					<td class="col-md-6">
+						<div id="slidecontainer" >
+                        <input type="range" min="0" max="5" step="1" value="0" class="slider" [id]="i" [(ngModel)]="numlist[i]" >
+						</div>
+                    </td>
+					<td class="col-md-3"><strong><input  type="text" placeholder="value" [(ngModel)]="numlist[i]" class=" box" disabled ></strong></td>
+					<br><br><br>
+					
+				</tr>
+			</tbody>
+		<hr>
+        <div >
+                <button (click)="goBack()" class="btn btn-danger">Back</button>
+				<button (click)="submit()" class="btn btn-primary">submit</button>
+                </div>	
+	</div>
+    
+</div>
+</div>
+
+</body>
